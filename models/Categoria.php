@@ -1,6 +1,6 @@
 <?php
 require_once '../database/Connection.class.php';
-class Categora{
+class Categoria{
 
   public $id;
   public $nome;
