@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/front/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main.css">
+  <title>:)</title>
+</head>
+<body>
+
+  <div class="container" id="content"></div>
+  <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script>
+    function getProductList(){
+      const url = 'http://localhost:8080/api/groupbycategoria.php';
+     $.get(url, response => {
+      console.log(response);
+      if(response.length){
+        $('#content').html('');
+        $.each(response, (k, v) => {
+          let row = $(`<div class="row fila"><div><h3>${v.nome}</h3></div></div>`);
+          $.each(v.produtos, (a,b) => {
+             let bloco = $(`<div class="col-md-4 bloco" style="background-image: url('${b.img}'); background-repeat: no-repeat;
+             background-size: cover
+             " t>
+            <div>
+              <p>${b.titulo}</p>
+              <p>${b.depreco}</p>
+              <p>${b.porpreco}</p>
+            </div>
+          </div>`);
+            $(row).append(bloco);
+          });
+          $('#content').append(row);
+        });
+      }
+     });
+    }
+    $(document).ready(()=>{
+      getProductList();
+    });
+  </script>
+</body>
+</html>

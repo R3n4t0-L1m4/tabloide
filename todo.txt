@@ -1,0 +1,30 @@
+Banco de Dados
+
+produto (id_produto, titulo_produto, foto_produto,depreco, porpreco)
+
+Alimentar banco com produtos;
+Apenas preços costumam sofrer alterações;
+
+
+
+Tela inicial
+
+Uma listagem dos produtos,
+seleciona produto, edita as duas caixas de preços,
+escolhe o título da categoria,
+escolhe a proporção da página (um tabela de tantas linhas, com tantos produtos por linha, geralmente 5, 6),
+adiciona a arte do background (cliente),
+gerar pdf.
+
+
+Detalhes
+
+Determina um padding entre uma tabela e outra;
+
+
+Extras
+
+Implementar edição básica de css, pelo usuário:
+
+- Modificar fonte
+- Modificar cores
