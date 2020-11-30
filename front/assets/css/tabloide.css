@@ -1,0 +1,41 @@
+/* QUADRADO DO PRODUTO */
+#item{
+  width:200px;
+  height:200px;
+  border: dotted 1px;
+}
+/* BACKGROUND PREÇO */
+#item2{
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2px;
+  margin-right: 2px;
+  right: 0;
+}
+/* PREÇO */
+#por{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 15px;
+  margin-right: 2px;
+  font-family: arial black;
+  color: red;
+}
+/* FOTO */
+#logo{
+  max-width: 80%;
+  max-height: 50%;
+  overflow: hidden;
+}
+/* TITULO PRODUTO */
+h6{
+  text-align: center;
+  margin-top: 10px;
+}
+/* EXCLUIR QUANDO COLOCAR A LOGO DO SUPERMERCADO */
+body{
+  margin-top: 15%;
+}
