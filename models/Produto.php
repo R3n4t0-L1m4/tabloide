@@ -18,6 +18,21 @@ class Produto{
      $this->id_cateoria = $arr['id_categoria'] ?? false;
   }
 
+  public static function pesquisa($pesquisa){
+
+    if($pesquisa){
+      $pesquisa = '%'.$pesquisa.'%';
+      $sql = "SELECT * FROM produto WHERE titulo LIKE :pesquisa";
+      $stmt = Connection::prepare($sql);
+      $sql .= "";
+      $stmt->bindParam(':pesquisa', $pesquisa);
+      $stmt->execute();
+      return $stmt->fetchAll();
+    }
+
+    return [];
+  }
+
   public function edit(){
     if($this->id && $this->titulo && $this->img && $this->depreco && $this->porpreco && $this->id_categoria){
       $sql = "UPDATE produto

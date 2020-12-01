@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/front/assets/css/bootstrap.min.css">
 
-  <title>Document</title>
+  <title>Cadastor de Produto</title>
 </head>
 <body>
 
   <div class="container">
-    <form>
+    <form id="form" enctype="multipart/form-data" action="/api/produto.php" method="POST">
       <div class="form-group py-5">
         <label for="titulo">Título</label>
         <input type="text" class="form-control" id="titulo" name="titulo">
@@ -38,6 +38,8 @@
         <input type="file" class="form-control-file" id="img" name="img">
       </div>
 
+      <button type="submit" class="btn btn-primary" id="submit">Cadastrar</button>
+
 
     </form>
   </div>
@@ -46,13 +48,41 @@
 
 
   <script src="assets/js/jquery-3.4.1.min.js"></script>
+  <script src="assets/js/jquery.form.min.js"></script>
+  <script src="assets/js/sweetalert.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script>
+
     $(document).ready(()=>{
       $.get('/api/categoria.php', d => {
         console.log(d);
+        if(d.length){
+          $.each(d, (k,v) => {
+            $('#id_categoria').append($(`<option value="${v.id}">${v.nome}</option>`));
+          });
+        }
       });
-    })
+    });
+
+      // $('#form').ajaxForm(
+      //   {
+      //    url: '/api/produto.php',
+      //    method: 'POST',
+      //     statusCode: {
+      //       200: (d) => {
+      //         console.log(d);
+      //         let opt = {
+      //           title: 'Sucesso!',
+      //           text: 'Dados Cadastrados',
+      //           icon: 'success'
+      //         };
+      //         swal(opt);
+      //       }
+      //     }
+      //   });
+
+
+
   </script>
 </body>
 </html>
