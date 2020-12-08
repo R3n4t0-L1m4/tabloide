@@ -17,7 +17,7 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <script>
     function getProductList(){
-      const url = 'http://localhost:8080/api/groupbycategoria.php';
+      const url = 'http://localhost/tabloide/api/groupbycategoria.php';
      $.get(url, response => {
       console.log(response);
       if(response.length){
