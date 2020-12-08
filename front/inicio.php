@@ -141,7 +141,7 @@ var_dump($_GET);
       </div>
       <!-- Linha -->
       <input  style="margin-top:10px"   type="submit" value="Finalizar" class="btn btn-primary">
-      <input id="count" style="margin-top:10px" value="0" type="button" class="btn btn-outline-primary">
+      <input id="ct" style="margin-top:10px" value="0" type="button" class="btn btn-outline-primary">
 
     </form>
 
@@ -152,14 +152,9 @@ var_dump($_GET);
 </html>
 
 <script type="text/javascript">
-var checkbox = document.querySelector("input[id=checkbox]");
-
-checkbox.addEventListener('change', function() {
-if (this.checked) {
-  document.querySelector('#count').innerHTML++;
-} else {
-  console.log("Checkbox is not checked..");
-}
+$('input[type=checkbox]').on('change', function () {
+    document.getElementById('ct').value = $('input[type=checkbox]:checked').length;
+    // arte
 });
 
 </script>
