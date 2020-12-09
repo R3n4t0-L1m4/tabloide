@@ -86,7 +86,7 @@ class Produto{
 
   public static function groupByCategoria(){
     $sql = "SELECT
-     b.nome,
+     b.nome, b.id as id_categoria,
      group_concat(a.id) as produtos FROM produto a
       LEFT JOIN categoria b ON b.id = a.id_categoria GROUP BY b.nome ORDER BY b.id";
     $stmt = Connection::prepare($sql);

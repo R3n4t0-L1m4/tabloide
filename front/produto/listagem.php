@@ -18,7 +18,7 @@
 </div>
 
   <div class="container" id="content">
-    <input list="produtos" id="pdi">
+    <input list="produtos" id="pdi" autocomplete="off">
     <datalist id="produtos"></datalist>
   </div>
 
