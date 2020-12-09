@@ -10,7 +10,6 @@
 <body>
   <?php include('layouts/navbar.php'); ?>
 
-
   <div class="container">
     <div class="row">
       <h3>topo - Informações sobre a empresa</h3>

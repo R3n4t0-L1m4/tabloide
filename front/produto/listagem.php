@@ -17,9 +17,33 @@
   <h3>Listagem</h3>
 </div>
 
-  <div class="container" id="content"></div>
-  <script src="/front/assets/js/jquery-3.4.1.min.js"></script>
+  <div class="container" id="content">
+    <input list="produtos" id="pdi">
+    <datalist id="produtos"></datalist>
+  </div>
+
   <?php include('../layouts/scripts.php'); ?>
+  <script>
+    function getItems(s=null){
+      if(s){
+        $.get('/api/filtra_produto.php', s, resultados => {
+          console.log(resultados);
+          $('#produtos').html('');
+          $.each(resultados, (k,v)=>{
+            $('#produtos').append($(`
+              <option value="${v.titulo}">
+            `));
+          });
+        });
+      }
+    }
+    $(document).ready(()=>{
+      $('#pdi').on('keyup', e => {
+        e.preventDefault();
+        getItems({s: $('#pdi').val()});
+      });
+    });
+  </script>
 </body>
 
 </html>
