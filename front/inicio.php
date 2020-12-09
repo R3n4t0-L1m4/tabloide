@@ -53,12 +53,12 @@ function getItemsByCategoria(){
   $.get('/api/groupbycategoria.php', data => {
     console.log(data);
     $.each(data, (k,v)=>{
-      let title_categoria = $(`<h4 data-toggle="collapse" data-target="#${v.id_categoria}">${v.nome} <i class="fa fa-plus"></i></h4>
-      <hr>`);
-      let row_categoria = $(`<div id="${v.id_categoria}" class="collapse"></div>`);
+      let title_categoria = $(`<div class="row"><h4 data-toggle="collapse" data-target="#${v.id_categoria}">${v.nome} <i class="fa fa-plus"></i></h4>
+      <hr></div>`);
+      let row_categoria = $(`<div class="row" id="${v.id_categoria}" class="collapse"></div>`);
       $.each(v.produtos, (a,b)=>{
         $(row_categoria).append($(
-          `<div class="col-sm" id="item" >
+          `<div class="col-sm-2 col-md-2 item" >
             <img src="../img/por.png" alt="" id="" class="item2">
             <h6 id="tp">${b.titulo}</h6>
             <hr>

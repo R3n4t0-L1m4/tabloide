@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/front/assets/css/inicio.css">
   <?php include('layouts/css.php'); ?>
 
   <title>:)</title>
@@ -26,12 +27,12 @@
       $.get('/api/produto.php', produtos => {
         $.each(produtos, (chave, produto) => {
           let quadro = $(`
-            <div class="col-sm">
+            <div class="col-sm-3 col-md-2 item">
 
-              <h6 id="tp">${produto.titulo}</h6>
+              <h6 class="tp">${produto.titulo}</h6>
               <hr>
-              <img src="${produto.img}" alt="">
-              <h4 id="por">R$ ${produto.depreco}</h4>
+              <img src="${produto.img}" class="item2 logo" alt="">
+              <h4 class="por">R$ ${produto.depreco}</h4>
             </div>
           `);
           $('#content').append(quadro);
