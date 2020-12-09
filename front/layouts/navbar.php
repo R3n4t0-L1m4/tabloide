@@ -20,6 +20,16 @@
             <li><a class="dropdown-item" href="/front/produto/listagem.php">Listagem/Edição</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Categoria
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+            <li><a class="dropdown-item" href="/front/categoria/cadastro.php">Cadastro</a></li>
+            <li><a class="dropdown-item" href="/front/categoria/listagem.php">Listagem/Edição</a></li>
+          </ul>
+        </li>
 
       </ul>
 
