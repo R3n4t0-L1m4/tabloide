@@ -1,3 +1,16 @@
+<?php
+  $resultados = null;
+  if(count($_GET)){
+    require_once '../database/Connection.class.php';
+    $sql = "SELECT * FROM from produto WHERE id IN (:ids)";
+    $stmt = Connection::prepare($sql);
+    $ids = $GET['ids'];
+    $str_ids = implode(",", $ids);
+    $stmt->bindParam(':ids', $str_ids);
+    $stmt->execute();
+    $resultados = $stmt->fetchAll();
+  }
+?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
 <head>
@@ -11,7 +24,13 @@
   <div class="container">
     <!-- LINHA -->
     <div class="row">
-
+          <?php
+            if($resultados){
+              foreach($resultados as $resultado){
+               //
+              }
+            }
+          ?>
           <div class="col-sm" id="item" >
             <img src="../img/por.png" alt="" id="item2">
             <h6>Achocolatado Nestlé Nescau Top Mesmo</h6>

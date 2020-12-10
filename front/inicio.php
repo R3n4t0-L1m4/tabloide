@@ -79,7 +79,9 @@ function getItemsByCategoria(){
 
 $(document).ready(()=>{
   getItemsByCategoria();
-
+  /*
+    {produtos: [1,2,3,4]}
+  */
 })
 
 
