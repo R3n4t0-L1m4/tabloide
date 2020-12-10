@@ -7,8 +7,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/front">Exemplo</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarExamples" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Exemplos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarExamples">
+            <li><a class="dropdown-item" href="/front/exemplos/primeiro.php">Primeiro</a></li>
+            <li><a class="dropdown-item" href="/front/exemplos/segundo.php">Segundo</a></li>
+          </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
